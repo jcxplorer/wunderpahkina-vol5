@@ -23,6 +23,7 @@ header p {
 
 canvas {
   display: block;
+  margin: 12px 0;
 }
 
 div {
@@ -35,12 +36,14 @@ a {
 
 .canvases {
   display: flex;
-  margin: 40px 0;
-  justify-content: space-between;
+  margin: 28px 0;
+  flex-direction: column;
+  align-items: center;
 }
 
 #solution {
   box-shadow:inset 0px 0px 0px 1px #f2f2f2;
+  position: relative;
 }
 
 #solve {
@@ -60,4 +63,11 @@ a {
 #solve:hover {
   background: #000;
   color: #fff;
+}
+
+@media (min-width: 480px) {
+  .canvases {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
