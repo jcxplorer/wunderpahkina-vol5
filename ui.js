@@ -15,18 +15,18 @@ const img = new Image();
 img.src = "message.png";
 img.onload = () => {
   const { width, height } = img;
-  const secretCanvas = document.getElementById("secret");
+  const secretCanvas = document.querySelector(".secret");
   const secretCtx = secretCanvas.getContext("2d");
   resizeCanvas(secretCanvas, width, height);
   secretCtx.drawImage(img, 0, 0, width, height);
 
-  const solutionCanvas = document.getElementById("solution");
+  const solutionCanvas = document.querySelector(".solution");
   const solutionCtx = solutionCanvas.getContext("2d");
   resizeCanvas(solutionCanvas, width, height);
 
   const schedule = scheduler(16);
 
-  document.getElementById("solve").onclick = (e) => {
+  document.querySelector(".solve-btn").onclick = (e) => {
     e.preventDefault();
     e.target.style.display = "none";
     solve(secretCanvas, (x, y) => {
